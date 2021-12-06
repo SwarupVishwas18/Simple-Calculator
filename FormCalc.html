@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Calculator</title>
+
+    <style>
+        body {
+            margin: 50px;
+            padding: 35px;
+            background: blanchedalmond;
+            border: 2px solid black;
+            /* font-weight: bold; */
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 18px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        select {
+            margin-bottom: 140px;
+            margin-left: 100px;
+            margin-right: 100px;
+            background-color: rgb(2, 252, 231);
+            padding: 7px 100px;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: medium;
+        }
+
+
+        input[type="submit"] {
+            background-color: lightpink;
+            padding: 5px;
+            color: darkolivegreen;
+            border: none;
+            width: 380px;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 20px;
+            border-radius: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: deeppink;
+            color: black;
+        }
+
+        footer {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            background-color: black;
+            padding: 25px;
+            color: beige;
+            border-radius: 20px;
+            font-size: large;
+        }
+    </style>
+
+    <script>
+        function calc() {
+            var no1 = parseFloat(document.getElementById("op1").value);
+            var no2 = parseFloat(document.getElementById("op2").value);
+            var result = 0;
+
+            // Select Checking
+
+            var oper = document.getElementById("operator").options.selectedIndex;
+            switch (oper) {
+                case 0:
+                    result = no1 + no2;
+                    break;
+                case 1:
+                    result = no1 - no2;
+                    break;
+                case 2:
+                    result = no1 / no2;
+                    break;
+                case 3:
+                    result = no1 * no2;
+                    break;
+                default:
+                    result = '';
+                    break;
+            }
+
+
+
+            op.innerText = "Your result is  :  " + result;
+
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1><u>Form Calculator</u></h1>
+
+    <p>
+        Operand 1 :
+        <input type="number" name="op1" id="op1">
+    </p>
+
+    <p>
+        Operand 2 :
+        <input type="number" name="op2" id="op2">
+    </p>
+
+    <fieldset>
+        <legend>Select Operator</legend>
+        <select name="operator" id="operator">
+            <option>Add</option>
+            <option>Sub</option>
+            <option>Divide</option>
+            <option>Multiply</option>
+
+        </select>
+    </fieldset>
+
+    <p>
+        <input type="submit" value="Submit" onclick='calc();'>
+    </p>
+
+    <h1 id="op"></h1>
+
+    <footer>Copyright &copy; Swarup Vishwas</footer>
+</body>
+
+</html>
